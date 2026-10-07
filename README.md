@@ -1,1 +1,1 @@
-# Sotheby-s-Art-Scraper
+# Art-Scraper

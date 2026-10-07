@@ -1,3 +1,7 @@
+# ----------------------------------------------- RECENT DATA WITHOUT SOLD PRICE -----------------------------------------------
+
+
+
 # import html
 # import json
 # import re
@@ -410,6 +414,7 @@
 #         description = html_to_text(og) or sections.get("description", "")
 #         description_en = re.split(r"\n-{10,}\n", description, maxsplit=1)[0].strip()
 
+
 #         item["description"] = description
 #         item["description_en"] = description_en
 #         item["provenance"] = sections.get("provenance", "")
@@ -427,6 +432,11 @@
 
 
 
+# ----------------------------------------------- RECENT DATA WITH SOLD PRICE -----------------------------------------------
+# ------------------TO PERFORM THIS YOU WILL GET------------------
+# BEARER TOKEN FROM AUCTION LOT URL = PERFORM RIGHT CLICK ON AUCTION LOT URL TO OPEN DEVTOOL -> NETWORK -> DOCS -> YOU CAN SEE THE AUCTION NAME -> GO TO HEADERS -> REQUEST -> YOU CAN GET BEARER TOKEN
+# ------------------TO PERFORM THIS YOU WILL GET------------------
+# COOKIE = GO INTO AUCTION LOT URL AND SELECT LOT SOLD VALUE TO OPEN DEVTOOL -> NETWORK -> FETCH/XHR -> YOU CAN SEE THE GRAPHQL -> GO TO HEADERS -> REQUEST -> YOU CAN GET COOKIE
 import csv
 import html
 import json

@@ -238,19 +238,30 @@ The scraper reads the JSON response and extracts the required information.
 For example:
 
 ```text
-GraphQL API
-     ↓
-JSON Response
-     ↓
-Auction
-     ↓
-Lots
-     ↓
-Artwork
-     ↓
-Images
-     ↓
-URLs
+Sotheby's Website
+       │
+       ▼
+  GraphQL API
+       │
+       ▼
+  JSON Response
+       │
+       ▼
+    Auction
+       │
+       ▼
+     Lots
+       │
+       ├── Artwork
+       │     ├── Artist
+       │     ├── Title
+       │     ├── Estimate
+       │     └── Description
+       │
+       ├── Images
+       │     └── Image URL
+       │
+       └── Lot URL
 ```
 
 This approach is useful because the required data is already available in a structured JSON format.

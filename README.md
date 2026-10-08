@@ -69,6 +69,49 @@ It is responsible for:
 
 This is the main file used for the current scraper.
 
+Run:
+
+```bash
+scrapy crawl lots -a start_from=1 -a max_auctions=1 -O lots.csv
+```
+
+| Flag | Meaning |
+|---|---|
+| `-a start_from=1` | Skip the first N auctions |
+| `-a max_auctions=2` | Scrape N auctions after skipping |
+| `-O lots.csv` | Write output, overwriting the file |
+| `-o lots.csv` | Write output, appending to the file |
+| `-L INFO` | Reduce logging output |
+| `-s JOBDIR=crawls/lots-1` | Save crawl state for pause/resume |
+
+
+Pause & Resume
+
+Start:
+
+```bash 
+scrapy crawl lots -a start_from=1 -a max_auctions=1 -o lots.csv -s JOBDIR=crawls/lots-1
+```
+Pause
+
+Press Ctrl+C once and wait for a clean shutdown.
+Resume
+
+Run the same command again.
+
+Start Fresh
+
+```bash
+rm -rf crawls/lots-1
+```
+
+Important
+- Use -o, not -O, when using JOBDIR.
+- Keep start_from and max_auctions unchanged when resuming.
+- Use a separate JOBDIR for each crawl.
+- Duplicate lots may occur after resuming.
+- De-duplicate the CSV using lot_id if needed.
+
 ---
 
 ### `oldartspider.py`

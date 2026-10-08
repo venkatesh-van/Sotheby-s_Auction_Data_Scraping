@@ -53,7 +53,7 @@ pip install ipython
 
 Scrapy Shell lets you test selectors and inspect a webpage interactively before putting the code into your spider.
 
-In Scrapy.cfg add under [setting]
+In Scrapy.cfg add under [settings]
 ```bash
 shell = "ipython"
 ```

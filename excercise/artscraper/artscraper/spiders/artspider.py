@@ -276,17 +276,25 @@ class LotsSpider(scrapy.Spider):
         "FEED_EXPORT_ENCODING": "utf-8-sig",
     }
 
-    def __init__(self, max_auctions=None, *args, **kwargs):
+    def __init__(self, max_auctions=None, start_from=0, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        # run with:  scrapy crawl lots -a max_auctions=2 -O lots.csv
+        # run with:
+        #   scrapy crawl lots -a start_from=1 -a max_auctions=1 -O lots.csv
+        #   start_from  = how many auctions to skip (0 = begin at the first)
+        #   max_auctions = how many auctions to scrape AFTER skipping
         self.max_auctions = int(max_auctions) if max_auctions else None
+        self.start_from = int(start_from)
 
     def parse(self, response):
         # STEP 1: collect auctions with their name/date/category from the results page
         cards = response.css("div.Card")
-        if self.max_auctions:
-            cards = cards[: self.max_auctions]  # e.g. only auctions [0] and [1]
-        self.logger.info(f"Found {len(cards)} auction cards")
+        total = len(cards)
+        end = self.start_from + self.max_auctions if self.max_auctions else None
+        cards = cards[self.start_from:end]
+        self.logger.info(
+            f"Found {total} auction cards; scraping {len(cards)} "
+            f"(start_from={self.start_from}, max_auctions={self.max_auctions})"
+        )
 
         for card in cards:
             url = card.css("a::attr(href)").get()
@@ -413,7 +421,6 @@ class LotsSpider(scrapy.Spider):
         og = response.css('meta[property="og:description"]::attr(content)').get()
         description = html_to_text(og) or sections.get("description", "")
         description_en = re.split(r"\n-{10,}\n", description, maxsplit=1)[0].strip()
-
 
         item["description"] = description
         item["description_en"] = description_en

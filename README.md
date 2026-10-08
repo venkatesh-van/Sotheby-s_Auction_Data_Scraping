@@ -126,6 +126,16 @@ The current development should mainly use:
 artspider.py
 ```
 
+Run:
+
+```bash
+
+  scrapy crawl lots_2015 -o lots_2015.csv -s JOBDIR=crawl-state-2015
+  scrapy crawl lots_2015 -a start_auction=2 -a max_auctions=2 -o part.csv
+
+```
+
+
 ---
 
 ### `items.py`

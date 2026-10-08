@@ -35,6 +35,29 @@ Sotheby's Scraper/
 └── README.md
 ```
 
+### `Install Scrapy`
+
+```bash
+pip install scrapy
+```
+
+### `Install Ipython`
+
+you can see results in the normal terminal. IPython is not required for Scrapy
+
+```bash
+pip install ipython
+```
+
+## Adding Scrapy Shell
+
+Scrapy Shell lets you test selectors and inspect a webpage interactively before putting the code into your spider.
+
+In setting.py add
+```bash
+shell = "ipython"
+```
+
 ## File Explanation
 
 ### `artvenv/`

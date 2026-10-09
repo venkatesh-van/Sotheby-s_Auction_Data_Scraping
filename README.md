@@ -71,32 +71,6 @@ Example:
 python -m pip install --upgrade pip
 ```
 
-## 4. Install Python Packages
-
-For example, to install Scrapy:
-
-```bash
-pip install scrapy
-```
-
-## 5. Deactivate the Virtual Environment
-
-When you finish working, run:
-
-```bash
-deactivate
-```
-
-```gitignore
-artvenv/
-```
-
-### `Install Scrapy`
-
-```bash
-pip install scrapy
-```
-
 ### `Install Ipython`
 
 you can see results in the normal terminal. IPython is not required for Scrapy

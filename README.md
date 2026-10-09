@@ -87,13 +87,6 @@ When you finish working, run:
 deactivate
 ```
 
-## Important Notes
-
-- Create the virtual environment once per project environment.
-- Activate it whenever you start working on the project again.
-- Install project dependencies while the environment is activated.
-- Do not upload the `artvenv` folder to GitHub. Add it to your `.gitignore` file instead.
-
 ```gitignore
 artvenv/
 ```

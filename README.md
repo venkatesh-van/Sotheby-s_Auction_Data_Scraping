@@ -37,16 +37,65 @@ Sotheby's Scraper/
 
 ## File Explanation
 
-### `artvenv/`
+# Create and Activate a Virtual Environment
 
-Python virtual environment used for this project.
+## 1. Create the Virtual Environment
 
-It contains the packages required to run the scraper.
+Open the terminal and run:
 
-Activate it with:
+```bash
+python3 -m venv artvenv
+```
+
+This creates a virtual environment named `artvenv` in your current directory.
+
+## 2. Activate the Virtual Environment
+
+Run the following command in your terminal:
 
 ```bash
 source artvenv/bin/activate
+```
+
+After activation, you should see `(artvenv)` at the beginning of your terminal prompt.
+
+Example:
+
+```bash
+(artvenv) username@MacBook-Pro %
+```
+
+## 3. Upgrade pip
+
+```bash
+python -m pip install --upgrade pip
+```
+
+## 4. Install Python Packages
+
+For example, to install Scrapy:
+
+```bash
+pip install scrapy
+```
+
+## 5. Deactivate the Virtual Environment
+
+When you finish working, run:
+
+```bash
+deactivate
+```
+
+## Important Notes
+
+- Create the virtual environment once per project environment.
+- Activate it whenever you start working on the project again.
+- Install project dependencies while the environment is activated.
+- Do not upload the `artvenv` folder to GitHub. Add it to your `.gitignore` file instead.
+
+```gitignore
+artvenv/
 ```
 
 ### `Install Scrapy`

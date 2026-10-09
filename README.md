@@ -71,6 +71,12 @@ Example:
 python -m pip install --upgrade pip
 ```
 
+### `Install Scrapy`
+
+```bash
+pip install scrapy
+```
+
 ### `Install Ipython`
 
 you can see results in the normal terminal. IPython is not required for Scrapy

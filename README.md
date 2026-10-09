@@ -35,6 +35,20 @@ Sotheby's Scraper/
 └── README.md
 ```
 
+## File Explanation
+
+### `artvenv/`
+
+Python virtual environment used for this project.
+
+It contains the packages required to run the scraper.
+
+Activate it with:
+
+```bash
+source artvenv/bin/activate
+```
+
 ### `Install Scrapy`
 
 ```bash
@@ -56,20 +70,6 @@ Scrapy Shell lets you test selectors and inspect a webpage interactively before 
 In Scrapy.cfg add under [settings]
 ```bash
 shell = "ipython"
-```
-
-## File Explanation
-
-### `artvenv/`
-
-Python virtual environment used for this project.
-
-It contains the packages required to run the scraper.
-
-Activate it with:
-
-```bash
-source artvenv/bin/activate
 ```
 
 ---
